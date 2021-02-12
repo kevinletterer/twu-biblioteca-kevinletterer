@@ -11,13 +11,20 @@ public class BibliotecaApp {
         Menu menu = new Menu();
 
         greeting.displayGreet();
-
         try{System.in.read();}
         catch(Exception e){}
 
         menu.displayMenu();
         System.out.println("Please choose an option and press enter");
-        String choice = scanner.nextLine();
+        String choice = scanner.next();
+
+        if (choice.contentEquals("1")){
+            System.out.println("Displaying Books:\n");
+            menu.displayBookList();
+        }
+        else {
+            System.out.println("Please select a valid option!");
+        }
     }
 
 
