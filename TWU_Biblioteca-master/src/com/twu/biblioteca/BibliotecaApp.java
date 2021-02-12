@@ -1,19 +1,17 @@
 package com.twu.biblioteca;
-import java.io.*;
 import java.util.Scanner;
-import com.twu.biblioteca.Greeting;
 
 public class BibliotecaApp {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Greeting greeting = new Greeting();
+        Messages messages = new Messages();
         Menu menu = new Menu();
         BookList bookList = new BookList();
 
 
 
-        greeting.displayGreet();
+        messages.displayGreet();
         try{System.in.read();}
         catch(Exception e){}
 
@@ -28,24 +26,28 @@ public class BibliotecaApp {
                     menu.displayMenu();
 
                 } else if (choice.contentEquals("2")) {
-                    System.out.println("Select a book to withdraw");
+                    System.out.println("Select a book to withdraw\n");
                     bookList.displayAvailableBooks();
                     String choiceW = scanner.next();
-                    try{bookList.withdraw(Integer.parseInt(choiceW)-1);}
+                    try{
+                        bookList.withdraw(Integer.parseInt(choiceW)-1);
+                    }
                     catch (Exception e){
-                        System.out.println("Please select a valid option!");
+                        messages.displayWrongChoice();
                     }
 
                     menu.displayMenu();
 
 
                 }else if (choice.contentEquals("3")) {
-                    System.out.println("Select a book to return");
+                    System.out.println("Select a book to return\n");
                     bookList.displayUnavailableBooks();
                     String choiceW = scanner.next();
-                    try{bookList.returns(Integer.parseInt(choiceW)-1);}
+                    try{
+                        bookList.returns(Integer.parseInt(choiceW)-1);
+                    }
                     catch (Exception e){
-                        System.out.println("Please select a valid option!");
+                        messages.displayWrongChoice();
                     }
 
                     menu.displayMenu();
@@ -53,7 +55,7 @@ public class BibliotecaApp {
                 }else if(choice.contentEquals("4")){
                     break;
                 } else {
-                    System.out.println("Please select a valid option!");
+                    messages.displayWrongChoice();
                     menu.displayMenu();
                 }
 

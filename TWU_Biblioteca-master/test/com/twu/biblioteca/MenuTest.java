@@ -11,7 +11,4 @@ public class MenuTest {
 
         assertEquals("Menu\n" + "1 - List of Books\n" + "2 - Quit", menu.getMenuContent());
     }
-
-
-
 }
