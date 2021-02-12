@@ -7,9 +7,7 @@ import java.util.List;
 public class BookList {
 
     List<Book> bookList = new ArrayList<>();
-    Messages messages = new Messages();
-
-
+    Messages   messages = new Messages();
 
     Book book1 = new Book("The Best Book",       "Kevin",   2023, true,  1);
     Book book2 = new Book("How to be Cool",      "Loreto",  2022, false, 2);
@@ -38,7 +36,6 @@ public class BookList {
         }
     }
 
-
     public void returns(int i) {
         if(this.bookList.get(i).getAvailable()==false){
             this.bookList.get(i).setAvailable();
@@ -49,22 +46,10 @@ public class BookList {
         }
     }
 
-    public String getBookList() {
-
-        String bookString ="";
-        for(Object book : this.bookList){
-            bookString = bookString + book;
-        }
-
-        return bookString;
-    }
-
-
     public void displayAvailableBooks(){
         for(Book book : this.bookList){
             if(book.getAvailable()){
                 System.out.printf(book.toString());
-                ;
             }
         }
     }
@@ -73,8 +58,17 @@ public class BookList {
         for(Book book : this.bookList){
             if(!book.getAvailable()){
                 System.out.printf(book.toString());
-                ;
             }
         }
     }
+
+
+    public String getBookList() {
+        String bookString ="";
+        for(Object book : this.bookList){
+            bookString = bookString + book;
+        }
+        return bookString;
+    }
+
 }

@@ -9,8 +9,6 @@ public class BibliotecaApp {
         Menu menu = new Menu();
         BookList bookList = new BookList();
 
-
-
         messages.displayGreet();
         try{System.in.read();}
         catch(Exception e){}

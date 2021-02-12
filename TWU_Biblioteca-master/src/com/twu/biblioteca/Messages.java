@@ -2,12 +2,12 @@ package com.twu.biblioteca;
 
 public class Messages {
 
-    private String greeting;
-    private String wrongChoice;
-    private String wrongWithdraw;
-    private String wrongReturn;
-    private String rightWithdraw;
-    private String rightReturn;
+    private final String greeting;
+    private final String wrongChoice;
+    private final String wrongWithdraw;
+    private final String wrongReturn;
+    private final String rightWithdraw;
+    private final String rightReturn;
 
     public  Messages(){
         this.greeting       =  "Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!\n" +  "Press Enter to continue...";
