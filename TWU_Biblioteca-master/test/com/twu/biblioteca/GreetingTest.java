@@ -4,9 +4,11 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class GreetingTest{
+
     @Test
     public void testWelcomeMessage() {
-        assertEquals("Welcome to Biblioteca!\n" +
-                "Press Enter to continue...", Greeting.greet());
+        Greeting greeting = new Greeting();
+        assertEquals("Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!\n" +
+                "Press Enter to continue...", greeting.getGreet());
     }
 }
