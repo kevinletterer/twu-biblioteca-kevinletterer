@@ -14,6 +14,8 @@ public class MenuTest {
 
     @Test
     public void testBookList() {
-        assertEquals("The Bible\nTwilight\nHarry Potter\n", menu.getBookList());
+        assertEquals("The Best Book       Kevin          2023\n" +
+                "How to be Cool      Loreto         2022\n" +
+                "Asian Food          Ramsey         2025\n", menu.getBookList());
     }
 }

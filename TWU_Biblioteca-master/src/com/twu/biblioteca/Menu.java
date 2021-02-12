@@ -1,19 +1,23 @@
 package com.twu.biblioteca;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Menu {
 
    private String menuContent;
-   final private ArrayList bookList;
+   final private List bookList;
+    Book book1 = new Book("The Best Book", "Kevin", 2023, true);
+    Book book2 = new Book("How to be Cool", "Loreto", 2022, true);
+    Book book3 = new Book("Asian Food", "Ramsey", 2025, true);
 
    public Menu(){
        this.menuContent = "Menu\n" + "1.- List of Books";
 
        bookList = new ArrayList();
-       this.bookList.add("The Bible");
-       this.bookList.add("Twilight");
-       this.bookList.add("Harry Potter");
+       this.bookList.add(book1);
+       this.bookList.add(book2);
+       this.bookList.add(book3);
 
    }
 
@@ -26,16 +30,21 @@ public class Menu {
    }
 
     public String getBookList() {
-       
-       String books = "";
-        for (var book: bookList) {
-            books = books + book + "\n";
-        }
-           return books;
+
+       String bookString ="";
+       for(Object book : this.bookList){
+           bookString += book.toString();
+       }
+
+           return bookString;
    }
 
    public void displayBookList(){
-       System.out.println(getBookList());
+
+       for(Object book : this.bookList){
+           System.out.printf(book.toString());
+
+       }
    }
 }
 
