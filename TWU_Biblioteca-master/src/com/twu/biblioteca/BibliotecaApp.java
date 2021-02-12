@@ -9,6 +9,9 @@ public class BibliotecaApp {
         Scanner scanner = new Scanner(System.in);
         Greeting greeting = new Greeting();
         Menu menu = new Menu();
+        BookList bookList = new BookList();
+
+
 
         greeting.displayGreet();
         try{System.in.read();}
@@ -18,10 +21,37 @@ public class BibliotecaApp {
             System.out.println("Please choose an option and press enter");
             String choice = scanner.next();
 
-            while (choice!="quit") {
+            while (true) {
                 if (choice.contentEquals("1")) {
                     System.out.println("Displaying Books:\n");
-                    menu.displayBookList();
+                    bookList.displayAvailableBooks();
+                    menu.displayMenu();
+
+                } else if (choice.contentEquals("2")) {
+                    System.out.println("Select a book to withdraw");
+                    bookList.displayAvailableBooks();
+                    String choiceW = scanner.next();
+                    try{bookList.withdraw(Integer.parseInt(choiceW)-1);}
+                    catch (Exception e){
+                        System.out.println("Please select a valid option!");
+                    }
+
+                    menu.displayMenu();
+
+
+                }else if (choice.contentEquals("3")) {
+                    System.out.println("Select a book to return");
+                    bookList.displayUnavailableBooks();
+                    String choiceW = scanner.next();
+                    try{bookList.returns(Integer.parseInt(choiceW)-1);}
+                    catch (Exception e){
+                        System.out.println("Please select a valid option!");
+                    }
+
+                    menu.displayMenu();
+
+                }else if(choice.contentEquals("4")){
+                    break;
                 } else {
                     System.out.println("Please select a valid option!");
                     menu.displayMenu();
@@ -29,10 +59,7 @@ public class BibliotecaApp {
 
                 choice = scanner.next();
             }
-
     }
-
-
 }
 
 

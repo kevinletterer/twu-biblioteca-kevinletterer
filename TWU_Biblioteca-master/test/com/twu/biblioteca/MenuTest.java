@@ -9,13 +9,9 @@ public class MenuTest {
     @Test
     public void testMenuContent() {
 
-        assertEquals("Menu\n" + "1.- List of Books", menu.getMenuContent());
+        assertEquals("Menu\n" + "1 - List of Books\n" + "2 - Quit", menu.getMenuContent());
     }
 
-    @Test
-    public void testBookList() {
-        assertEquals("The Best Book       Kevin          2023\n" +
-                "How to be Cool      Loreto         2022\n" +
-                "Asian Food          Ramsey         2025\n", menu.getBookList());
-    }
+
+
 }
